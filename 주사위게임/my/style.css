@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 80%;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.35);
+  width: 110rem;
+  height: 70rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.player {
+  padding: 13rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.score {
+  text-align: center;
+  font-size: 8rem;
+  font-weight: 550;
+  color: #bf2e34;
+  margin-bottom: auto;
+}
+
+.currentBox {
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  background-color: #c7365f;
+  opacity: 0.8;
+  padding: 2rem;
+  color: #eee;
+  border-radius: 1.5rem;
+}
+
+.container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  position: absolute;
+  font-size: 2.8rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: none;
+  opacity: 0.9;
+  padding: 1.3rem 2rem;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  color: #423F3E;
+}
+
+.diceImg {
+  position: absolute;
+  width: 12rem;
+  top: 20rem;
+}
+
+.reset {
+  top: 7rem;
+}
+.fa-undo {
+  color: #D62AD0;
+}
+.roll {
+  bottom: 19rem;
+}
+.fa-dice {
+  color: #0099ff;
+}
+
+.save {
+  bottom: 12rem;
+  padding: 1.1rem 2rem;
+}
+.fa-save {
+  color:  #ffff1a;
+}
