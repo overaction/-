@@ -31,6 +31,7 @@ main {
   border-radius: 5rem;
   display: flex;
   justify-content: space-around;
+  overflow: hidden;
 }
 
 .player {
@@ -39,14 +40,6 @@ main {
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-
-.player-1 {
-  border-radius: 5rem 0 0 5rem;
-}
-
-.player-2 {
-  border-radius: 0 5rem 5rem 0;
 }
 
 .player-active {
