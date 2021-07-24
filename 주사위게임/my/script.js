@@ -29,7 +29,7 @@ let lastScore = [0,0];
 
 // 플레이어 변경 function
 const changePlayer = (player) => {
-    if(player == 1) {
+    if(player === 1) {
         currentScore1El.textContent = 0;
         currentPlayer = 2;
     }
@@ -39,6 +39,22 @@ const changePlayer = (player) => {
     }
     player1El.classList.toggle('player-active');
     player2El.classList.toggle('player-active');
+}
+
+// 점수 세이브 function
+const saveScore = () => {
+    if(currentPlayer === 1) {
+        lastScore[0] += currentScore;
+        currentScore = 0;
+        score1El.textContent = lastScore[0];
+    }
+    else {
+        lastScore[1] += currentScore;
+        currentPlayer = 0;
+        score2El.textContent = lastScore[1];
+    }
+    changePlayer(currentPlayer);
+    console.log(lastScore);
 }
 
 // 주사위 굴리기 event
@@ -59,5 +75,9 @@ rollBtn.addEventListener('click', () => {
         currentScore = 0;
         currentPlayer === 1 ? changePlayer(1) : changePlayer(2);
     }
+})
+
+saveBtn.addEventListener('click', () => {
+    saveScore();
 })
 
