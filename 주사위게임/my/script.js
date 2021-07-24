@@ -30,17 +30,15 @@ let lastScore = [0,0];
 // 플레이어 변경 function
 const changePlayer = (player) => {
     if(player == 1) {
-        player1El.classList.remove('player-active');
-        player2El.classList.add('player-active');
         currentScore1El.textContent = 0;
         currentPlayer = 2;
     }
     else {
-        player2El.classList.remove('player-active');
-        player1El.classList.add('player-active');
         currentScore2El.textContent = 0;
         currentPlayer = 1;
     }
+    player1El.classList.toggle('player-active');
+    player2El.classList.toggle('player-active');
 }
 
 // 주사위 굴리기 event
