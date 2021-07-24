@@ -34,9 +34,23 @@ main {
 }
 
 .player {
+  flex: 50%;
   padding: 13rem;
   display: flex;
   flex-direction: column;
+  text-align: center;
+}
+
+.player-1 {
+  border-radius: 5rem 0 0 5rem;
+}
+
+.player-2 {
+  border-radius: 0 5rem 5rem 0;
+}
+
+.player-active {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .name {
@@ -83,12 +97,25 @@ main {
   cursor: pointer;
   font-family: inherit;
   color: #423F3E;
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.315);
+}
+
+.btn:active {
+  transform: translateY(8px);
 }
 
 .diceImg {
   position: absolute;
   width: 12rem;
   top: 20rem;
+}
+
+.hidden {
+  display: none;
 }
 
 .reset {
