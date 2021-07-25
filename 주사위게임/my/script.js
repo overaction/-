@@ -11,9 +11,9 @@ const diceEl = document.querySelector(".diceImg");
 const resetBtn = document.querySelector(".reset");
 const rollBtn = document.querySelector(".roll");
 const saveBtn = document.querySelector(".save");
-const allBtns = document.querySelectorAll('.btn');
+const allBtns = document.querySelectorAll(".btn");
 
-console.log(allBtns)
+console.log(allBtns);
 
 // 플레이어 element
 const player1El = document.getElementById("player-1");
@@ -55,14 +55,17 @@ const saveScore = () => {
         currentScore = 0;
         score2El.textContent = lastScore[1];
     }
-    console.log(lastScore,currentPlayer)
+    console.log(lastScore, currentPlayer);
     // 만약 점수가 100점 이상이면 승리
-    if (lastScore[currentPlayer-1] >= 100) {
-        document.getElementById(`player-${currentPlayer}`).classList.add("player-winner");
+    if (lastScore[currentPlayer - 1] >= 100) {
+        document
+            .getElementById(`player-${currentPlayer}`)
+            .classList.add("player-winner");
         document
             .getElementById(`player-${currentPlayer}`)
             .classList.remove("player-active");
         rollBtn.disabled = true;
+        diceEl.classList.add("hidden");
     } // 플레이어 변경
     else changePlayer(currentPlayer);
 };
@@ -95,15 +98,23 @@ saveBtn.addEventListener("click", () => {
 // 게임 재시작 event
 resetBtn.addEventListener("click", () => {
     diceEl.classList.add("hidden");
+    rollBtn.disabled = false;
+
     score1El.textContent = 0;
     score2El.textContent = 0;
+    currentScore1El.textContent = 0;
+    currentScore2El.textContent = 0;
     currentScore = 0;
-    if (currentPlayer === 2) {
-        player1El.classList.toggle("player-active");
-        player2El.classList.toggle("player-active");
-        currentPlayer = 1;
-    }
     lastScore = [0, 0];
+
     score1El.textContent = lastScore[0];
     score2El.textContent = lastScore[1];
+
+    player1El.classList.remove('player-winner')
+    player2El.classList.remove('player-winner')
+    
+    player1El.classList.add('player-active');
+    player2El.classList.remove('player-active');
+
+    currentPlayer = 1;
 });
