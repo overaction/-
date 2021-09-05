@@ -13,8 +13,6 @@ const rollBtn = document.querySelector(".roll");
 const saveBtn = document.querySelector(".save");
 const allBtns = document.querySelectorAll(".btn");
 
-console.log(allBtns);
-
 // 플레이어 element
 const player1El = document.getElementById("player-1");
 const player2El = document.getElementById("player-2");
@@ -55,7 +53,6 @@ const saveScore = () => {
         currentScore = 0;
         score2El.textContent = lastScore[1];
     }
-    console.log(lastScore, currentPlayer);
     // 만약 점수가 100점 이상이면 승리
     if (lastScore[currentPlayer - 1] >= 100) {
         document
@@ -77,7 +74,6 @@ rollBtn.addEventListener("click", () => {
     // 2. 숫자에 맞는 주사위이미지 생성
     diceEl.classList.remove("hidden");
     diceEl.src = `./dice_img/dice-${diceNum}.png`;
-    console.log(diceNum);
     // 3. 숫자가 1일 경우 플레이어 체인지
     // 아닐 경우 점수 추가
     if (diceNum !== 1) {
